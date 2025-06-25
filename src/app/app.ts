@@ -1,16 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { UiLayout } from './shared/ui-layout';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: `
-    <h1>Welcome to {{ title }}!</h1>
-
-    <router-outlet />
-  `,
+  imports: [UiLayout],
+  template: `<app-ui-layout />`,
   styles: []
 })
-export class App {
-  protected title = 'simple-dashboard-app';
-}
+export class App {}

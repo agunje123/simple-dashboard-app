@@ -5,11 +5,11 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet],
   template: `
-    <h1>Welcome to {{title}}!</h1>
+    <h1>Welcome to {{ title }}!</h1>
 
     <router-outlet />
   `,
-  styles: [],
+  styles: []
 })
 export class App {
   protected title = 'simple-dashboard-app';

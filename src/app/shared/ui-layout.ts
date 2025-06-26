@@ -10,13 +10,13 @@ import { UiHeader } from './ui-header';
   imports: [RouterOutlet, MatIconModule, MatButtonModule, UiNavbar, UiHeader],
   template: `
     <div
-      class="bg-gray-900 h-screen w-screen grid
+      class="app-background h-screen w-screen grid
             grid-rows-[auto_1fr_auto] md:grid-rows-none
-            grid-cols-1 md:grid-cols-[auto_1fr] p-4"
+            grid-cols-1 md:grid-cols-[auto_1fr] p-2"
     >
-      <div class="grid grid-rows-[auto_1fr] md:col-start-2 md:ml-4">
-        <app-ui-header />
-        <div class="overflow-auto">
+      <div class="grid grid-rows-[auto_1fr] md:col-start-2 md:ml-2">
+        <app-ui-header class="mb-2" />
+        <div class="overflow-auto app-card">
           <router-outlet />
         </div>
       </div>

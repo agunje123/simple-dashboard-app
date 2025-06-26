@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   imports: [MatIconModule, MatButtonModule, MatTooltipModule, RouterLink],
   template: `
     <div
-      class="bg-gray-700 rounded-2xl flex flex-row gap-1 items-center justify-center h-16 md:flex-col md:h-full md:w-42"
+      class="app-card flex flex-row gap-1 items-center justify-center h-16 md:flex-col md:h-full md:w-16"
     >
       @for (item of navItems; track item) {
         <button

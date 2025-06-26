@@ -6,7 +6,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-ui-header',
   imports: [MatIconModule, MatButtonModule, MatTooltipModule],
-  template: ` <div class="bg-gray-700 rounded-2xl h-16"></div> `,
+  template: ` <div class="app-card h-16"></div> `,
   styles: ``
 })
 export class UiHeader {}

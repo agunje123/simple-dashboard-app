@@ -1,5 +1,6 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, effect, Input, WritableSignal } from '@angular/core';
 import * as L from 'leaflet';
+import { Location } from './data-model-location';
 
 @Component({
   selector: 'app-feature-map',
@@ -12,8 +13,28 @@ import * as L from 'leaflet';
   styles: ``
 })
 export class FeatureMap implements AfterViewInit {
+  @Input() location!: WritableSignal<Location | undefined>;
+  private marker?: L.Marker;
   private map!: L.Map;
-  startingPoint: L.LatLngExpression = [45.8033796, 16.0050284];
+  private startingLocation: Location = { latlng: [45.8033796, 16.0050284], name: 'Zagreb' };
+  private markerIcon = {
+    icon: L.icon({
+      iconSize: [25, 41],
+      iconAnchor: [10, 41],
+      popupAnchor: [2, -40],
+      iconUrl: 'https://unpkg.com/leaflet@1.5.1/dist/images/marker-icon.png',
+      shadowUrl: 'https://unpkg.com/leaflet@1.5.1/dist/images/marker-shadow.png'
+    })
+  };
+
+  constructor() {
+    effect(() => {
+      const location = this.location();
+      if (location) {
+        this.panToMarker(location);
+      }
+    });
+  }
 
   ngAfterViewInit() {
     this.initMap();
@@ -21,7 +42,7 @@ export class FeatureMap implements AfterViewInit {
 
   private initMap() {
     this.map = L.map('map', {
-      center: this.startingPoint,
+      center: this.startingLocation.latlng,
       zoom: 18
     });
     L.tileLayer(
@@ -33,6 +54,22 @@ export class FeatureMap implements AfterViewInit {
         maxZoom: 16
       }
     ).addTo(this.map);
-    L.marker(this.startingPoint).bindPopup('Hello world!').openPopup().addTo(this.map);
+    this.createMarkerWithPopup(this.startingLocation);
+  }
+
+  private createMarkerWithPopup(location: Location) {
+    if (this.marker) {
+      this.marker.remove();
+    }
+
+    this.marker = L.marker(location.latlng, this.markerIcon)
+      .bindPopup(location.name)
+      .addTo(this.map);
+    this.marker.openPopup();
+  }
+
+  private panToMarker(location: Location) {
+    this.createMarkerWithPopup(location);
+    this.map.panTo(location.latlng);
   }
 }

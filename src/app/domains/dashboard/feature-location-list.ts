@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Location } from './data-model-location';
 
 @Component({
@@ -19,6 +19,8 @@ import { Location } from './data-model-location';
   styles: ``
 })
 export class FeatureLocationList {
+  @Output() selectedLocation = new EventEmitter<Location>();
+
   locations: Location[] = [
     { name: 'Zagreb', latlng: [45.8033796, 16.0050284] },
     { name: 'Split', latlng: [43.508133, 16.440193] },
@@ -33,6 +35,6 @@ export class FeatureLocationList {
   ];
 
   addMarker(location: Location) {
-    console.log('addedMarker ' + location);
+    this.selectedLocation.emit(location);
   }
 }

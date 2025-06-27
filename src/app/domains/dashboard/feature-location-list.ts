@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Location } from './data-model-location';
+import { Location } from './data-location-model';
 
 @Component({
   selector: 'app-feature-location-list',

@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, effect, Input, WritableSignal } from '@angular/core';
 import * as L from 'leaflet';
-import { Location } from './data-model-location';
+import { Location } from './data-location-model';
 
 @Component({
   selector: 'app-feature-map',

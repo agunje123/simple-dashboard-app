@@ -41,6 +41,9 @@ body.dark {
   --primary: oklch(0.76 0.2 74);
   --secondary: oklch(0.76 0.1 254);
 
+  scrollbar-color: var(--bg-light) var(--bg-dark);
+  scrollbar-width: thin;
+
   @include mat.table-overrides(
     (
       background-color: var(--bg-light),

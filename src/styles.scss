@@ -2,15 +2,44 @@
 @use '@angular/material' as mat;
 
 :root {
-  --bg-dark: oklch(0.92 0 109);
-  --bg: oklch(0.96 0 109);
-  --bg-light: oklch(1 0 109);
-  --text: oklch(0.15 0 109);
-  --text-muted: oklch(0.4 0 109);
-  --border: oklch(0.6 0 109);
-  --border-muted: oklch(0.7 0 109);
-  --primary: oklch(0.4 0.1 109);
-  --secondary: oklch(0.4 0.1 289);
+  --bg-dark: oklch(0.92 0 74);
+  --bg: oklch(0.96 0 74);
+  --bg-light: oklch(1 0 74);
+  --text: oklch(0.15 0 74);
+  --text-muted: oklch(0.4 0 74);
+  --primary: oklch(0.4 0.1 74);
+  --secondary: oklch(0.4 0.1 254);
+
+  @include mat.table-overrides(
+    (
+      background-color: var(--bg-light),
+      header-headline-color: var(--text),
+      row-item-label-text-color: var(--text-muted)
+    )
+  );
+
+  @include mat.icon-overrides(
+    (
+      color: var(--primary)
+    )
+  );
+
+  @include mat.tooltip-overrides(
+    (
+      container-color: var(--bg-light),
+      supporting-text-color: var(--text)
+    )
+  );
+}
+
+body.dark {
+  --bg-dark: oklch(0.1 0 74);
+  --bg: oklch(0.2 0 74);
+  --bg-light: oklch(0.3 0 74);
+  --text: oklch(0.96 0 74);
+  --text-muted: oklch(0.76 0 74);
+  --primary: oklch(0.76 0.2 74);
+  --secondary: oklch(0.76 0.1 254);
 
   @include mat.table-overrides(
     (
@@ -50,6 +79,11 @@
 
 .card-title {
   @apply font-medium text-3xl mb-2;
+  color: var(--text);
+}
+
+.card-text {
+  @apply font-medium;
   color: var(--text);
 }
 

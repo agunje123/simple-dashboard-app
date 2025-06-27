@@ -5,7 +5,7 @@ import { ChartData } from './data-chart-data-model';
 @Component({
   selector: 'app-ui-chart',
   imports: [],
-  template: ` <div class="app-card-light h-100 w-200">
+  template: ` <div class="app-card-light overflow-auto h-100">
     <h1 class="card-title">Graf</h1>
     <div class="chart-container">
       <canvas id="MyChart">{{ chart }}</canvas>

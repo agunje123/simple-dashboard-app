@@ -6,7 +6,7 @@ import { ChartData } from './data-chart-data-model';
   selector: 'app-ui-table',
   standalone: true,
   template: `
-    <div class="app-card-light overflow-auto h-100 w-50">
+    <div class="app-card-light overflow-auto h-100">
       <h1 class="card-title">Podaci</h1>
       <table mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="hour">

@@ -6,7 +6,7 @@ import { Location } from './data-location-model';
   selector: 'app-feature-map',
   imports: [],
   template: `
-    <div class="app-card-light h-100 w-200">
+    <div class="app-card-light h-100">
       <div id="map" style="height: 100%;width: 100%;" class="rounded-2xl"></div>
     </div>
   `,

@@ -4,7 +4,7 @@ import { Location } from './data-location-model';
 @Component({
   selector: 'app-feature-location-list',
   imports: [],
-  template: ` <div class="app-card-light h-100 w-50 overflow-auto">
+  template: ` <div class="app-card-light h-100 overflow-auto">
     <h1 class="card-title">Lokacije</h1>
     <ul class="list-none">
       @for (location of locations; track location) {

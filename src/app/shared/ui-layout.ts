@@ -40,7 +40,7 @@ export class UiLayout {
 
   headerTitle = computed(() => {
     const url = this.currentUrl();
-    if (url.includes('/table')) return 'Pokemon Tablica';
+    if (url.includes('/table')) return 'Tablica';
     return 'Dashboard';
   });
 }

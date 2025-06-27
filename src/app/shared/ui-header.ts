@@ -11,7 +11,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     <nav class="app-card h-16 flex justify-between">
       <section class="card-title ml-4">{{ title }}</section>
       <section class="flex items-center gap-2 mr-4">
-        <span class="card-text">Noćni način rada</span>
+        <span class="card-text">Kontrast</span>
         <mat-slide-toggle [checked]="isDark" (change)="toggleTheme($event.checked)">
         </mat-slide-toggle>
         <span class="card-text">Pero Perić</span>

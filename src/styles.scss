@@ -30,6 +30,12 @@
       supporting-text-color: var(--text)
     )
   );
+
+  @include mat.menu-overrides(
+    (
+      container-color: var(--bg-light)
+    )
+  );
 }
 
 body.dark {
@@ -62,6 +68,12 @@ body.dark {
     (
       container-color: var(--bg-light),
       supporting-text-color: var(--text)
+    )
+  );
+
+  @include mat.menu-overrides(
+    (
+      container-color: var(--bg-light)
     )
   );
 }

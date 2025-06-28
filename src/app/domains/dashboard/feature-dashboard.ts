@@ -10,11 +10,14 @@ import { TableProductComponent } from './ui-table';
 @Component({
   selector: 'app-feature-dashboard',
   imports: [FeatureMap, FeatureLocationList, UiChart, TableProductComponent],
-  template: ` <div class="flex">
-    <app-feature-map [location]="selectedLocation" />
-    <app-feature-location-list (selectedLocation)="selectedLocation.set($event)" />
-    <app-ui-table [data]="chartDataSignal" />
-    <app-ui-chart [data]="chartDataSignal" />
+  template: ` <div class="grid grid-cols-1 md:grid-cols-4 h-100">
+    <app-feature-map [location]="selectedLocation" class="md:col-span-3" />
+    <app-feature-location-list
+      (selectedLocation)="selectedLocation.set($event)"
+      class="md:col-span-1"
+    />
+    <app-ui-table [data]="chartDataSignal" class="md:col-span-1" />
+    <app-ui-chart [data]="chartDataSignal" class="md:col-span-3" />
   </div>`,
   styles: ``
 })

@@ -11,17 +11,16 @@ import { filter } from 'rxjs';
   imports: [RouterOutlet, MatIconModule, MatButtonModule, UiNavbar, UiHeader],
   template: `
     <div
-      class="app-background h-screen w-screen grid
-            grid-rows-[auto_1fr_auto] md:grid-rows-none
-            grid-cols-1 md:grid-cols-[auto_1fr] p-2"
+      class="app-background h-screen w-screen grid grid-cols-1 grid-rows-[1fr_auto] 
+            md:grid-rows-none md:grid-cols-[auto_1fr] p-2"
     >
-      <div class="grid grid-rows-[auto_1fr] md:col-start-2 md:ml-2">
+      <div class="grid grid-rows-[auto_1fr] md:ml-2">
         <app-ui-header class="mb-2" [title]="headerTitle()" />
-        <div class="overflow-auto app-card">
+        <div class="app-card overflow-auto">
           <router-outlet />
         </div>
       </div>
-      <app-ui-navbar class="row-start-3 md:col-start-1 md:row-start-1" />
+      <app-ui-navbar class="mt-2 md:mt-0 row-start-3 md:col-start-1 md:row-start-1" />
     </div>
   `,
   styles: ``

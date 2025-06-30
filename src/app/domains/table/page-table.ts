@@ -12,11 +12,13 @@ import { ComponentPokemonDialog } from './component-pokemon-dialog';
 @Component({
   selector: 'app-page-table',
   imports: [MatTableModule, ComponentPokemonTable, AsyncPipe],
-  template: `<app-component-pokemon-table
-    [data]="pokemon$ | async"
-    (showPokemonDetails)="onShowDetails($event)"
-    (pagination)="onPage($event)"
-  />`,
+  template: `<div class="h-100">
+    <app-component-pokemon-table
+      [data]="pokemon$ | async"
+      (showPokemonDetails)="onShowDetails($event)"
+      (pagination)="onPage($event)"
+    />
+  </div>`,
   styles: ``
 })
 export class PageTable {

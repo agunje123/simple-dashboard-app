@@ -1,59 +1,64 @@
-# SimpleDashboardApp
+# Simple Dashboard App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+A dashboard built with Angular featuring a responsive UI.
 
-## Development server
+## 🚀 Tech Stack
 
-To start a local development server, run:
+- **Angular v20**
+- **Angular Material**
+- **Tailwind**
+- **RxJS & Signals**
+- **ESLint, Prettier & Sheriff**
+- **lint-staged & Husky**
+
+## 🛠 Why These Tools?
+
+### 🎨 Tailwind
+
+For more readable components using inline styles and templates.
+
+### 🧱 Angular Material
+
+Prebuilt UI components for faster development.
+
+### 🔄 RxJS & Signals
+
+For demonstrative purposes both were used, although signals have a way to go still, they are the future of Angular.
+
+### 🧹 ESLint, Prettier, Sheriff
+
+Consistent code style, structure and formatting.
+
+### 🛡️ lint-staged & Husky
+
+Automated code quality checks before every commit.
+
+## 🧩 Project Structure & Responsibilities
+
+- **page-core-layout.ts**  
+  Sets the overall layout of the app.  
+  This is the shell that wraps all other pages.
+
+- **page-table.ts / page-dashboard.ts**  
+  Responsible for setting up the layout of their respective domains (table or dashboard).  
+  They also handle all necessary calls to the domain service.
+
+- **component-\*.ts**  
+  Contains components such as tables, charts, maps, dialogs, etc.  
+  Each component is focused on a specific UI or data visualization task.
+
+- **data-\*.ts**  
+  These files define the data models and services for fetching and managing data.
+
+- **util-\*.ts**  
+  Utility functions, pipes, or helpers that do not fit into the other categories.
+
+## 🧪 Setup & Development
 
 ```bash
-ng serve
+# Install dependencies
+npm install
+
+# Run the app locally
+npm start
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

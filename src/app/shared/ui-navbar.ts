@@ -34,7 +34,7 @@ export class UiNavbar {
     },
     {
       icon: 'table_chart',
-      label: 'Table',
+      label: 'Tablica',
       link: '/table'
     }
   ];

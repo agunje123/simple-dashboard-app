@@ -9,16 +9,12 @@ import { ChartData } from './data-chart-data-model';
     <div class="app-card-light overflow-auto h-100">
       <h1 class="card-title">Podaci</h1>
       <table mat-table [dataSource]="dataSource">
-        <ng-container matColumnDef="hour">
-          <th mat-header-cell *matHeaderCellDef>Sat</th>
-          <td mat-cell *matCellDef="let element">{{ element.hour }}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="average">
-          <th mat-header-cell *matHeaderCellDef>Prosjek</th>
-          <td mat-cell *matCellDef="let element">{{ element.average }}</td>
-        </ng-container>
-
+        @for (column of displayedColumns; track column) {
+          <ng-container [matColumnDef]="column">
+            <th mat-header-cell *matHeaderCellDef>{{ headerMap[column] }}</th>
+            <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+          </ng-container>
+        }
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
@@ -27,7 +23,7 @@ import { ChartData } from './data-chart-data-model';
   styles: [``],
   imports: [MatTableModule]
 })
-export class TableProductComponent {
+export class UiTableDataComponent {
   @Input({ required: true }) data!: Signal<ChartData[]>;
   dataSource = new MatTableDataSource<ChartData>();
 
@@ -36,6 +32,11 @@ export class TableProductComponent {
       this.dataSource.data = this.data();
     });
   }
+
+  headerMap: Record<string, string> = {
+    hour: 'Sat',
+    average: 'Prosjek'
+  };
 
   displayedColumns = ['hour', 'average'];
 }

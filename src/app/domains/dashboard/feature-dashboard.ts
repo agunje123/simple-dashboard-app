@@ -5,11 +5,11 @@ import { Location } from './data-location-model';
 import { UiChart } from './ui-chart';
 import { DataChartService } from './data-chart-service';
 import { ChartData } from './data-chart-data-model';
-import { TableProductComponent } from './ui-table';
+import { UiTableDataComponent } from './ui-table';
 
 @Component({
   selector: 'app-feature-dashboard',
-  imports: [FeatureMap, FeatureLocationList, UiChart, TableProductComponent],
+  imports: [FeatureMap, FeatureLocationList, UiChart, UiTableDataComponent],
   template: ` <div class="grid grid-cols-1 md:grid-cols-4 h-100">
     <app-feature-map [location]="selectedLocation" class="md:col-span-3" />
     <app-feature-location-list

@@ -2,6 +2,8 @@
 
 A dashboard built with Angular featuring a responsive UI.
 
+🔗 [Live Demo](https://simple-dashboard-app-gamma.vercel.app/dashboard)
+
 ## 🚀 Tech Stack
 
 - **Angular v20**

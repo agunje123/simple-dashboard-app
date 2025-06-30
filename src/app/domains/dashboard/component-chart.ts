@@ -7,7 +7,7 @@ import { ChartData } from './data-chart-data-model';
   imports: [],
   template: ` <div class="app-card-light overflow-auto h-100">
     <h1 class="card-title">Graf</h1>
-    <div class="chart-container">
+    <div class="relative w-full h-80">
       <canvas id="MyChart">{{ chart }}</canvas>
     </div>
   </div>`,
@@ -37,12 +37,33 @@ export class ComponentChart implements OnInit {
         datasets: [
           {
             label: 'Prosjek',
-            data: this.data() ? this.data().map((d) => d.average) : []
+            data: this.data() ? this.data().map((d) => d.average) : [],
+            borderRadius: 8,
+            borderSkipped: false,
+            maxBarThickness: 32
           }
         ]
       },
       options: {
-        aspectRatio: 2.5
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Sat'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Prosjek'
+            }
+          }
+        }
       }
     });
   }

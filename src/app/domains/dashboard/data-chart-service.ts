@@ -13,7 +13,7 @@ export class DataChartService {
 
   /**
    * Fetches data from assets folder and transforms it.
-   * @returns An observable which has ChartData.
+   * @returns ChartData Signal.
    */
   getHourlyAverageDataSignal(): Signal<ChartData[]> {
     return toSignal(
@@ -26,7 +26,7 @@ export class DataChartService {
 
   /**
    * Calculates the average value for each hour from the provided data.
-   * @param data - An object where each key is an hour (string) and the value is an array of IntervalData.
+   * @param data - Record where each key is an hour (string) and the value is an array of IntervalData.
    * @returns An array of objects with the hour and its average value.
    */
   private calculateHourlyAverageData(data: Record<string, IntervalData[]>): ChartData[] {

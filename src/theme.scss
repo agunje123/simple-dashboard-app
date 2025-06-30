@@ -1,0 +1,71 @@
+@use '@angular/material' as mat;
+
+@mixin material-overrides {
+  @include mat.table-overrides(
+    (
+      background-color: var(--bg-light),
+      header-headline-color: var(--text),
+      row-item-label-text-color: var(--text-muted)
+    )
+  );
+
+  @include mat.icon-overrides(
+    (
+      color: var(--primary)
+    )
+  );
+
+  @include mat.tooltip-overrides(
+    (
+      container-color: var(--bg-light),
+      supporting-text-color: var(--text)
+    )
+  );
+
+  @include mat.menu-overrides(
+    (
+      container-color: var(--bg-light)
+    )
+  );
+
+  @include mat.paginator-overrides(
+    (
+      container-text-color: var(--text),
+      container-background-color: var(--bg-light),
+      enabled-icon-color: var(--text)
+    )
+  );
+
+  @include mat.dialog-overrides(
+    (
+      container-color: var(--bg-light)
+    )
+  );
+}
+
+:root {
+  --bg-dark: oklch(0.92 0 74);
+  --bg: oklch(0.96 0 74);
+  --bg-light: oklch(1 0 74);
+  --text: oklch(0.15 0 74);
+  --text-muted: oklch(0.4 0 74);
+  --primary: oklch(0.4 0.1 74);
+  --secondary: oklch(0.4 0.1 254);
+
+  @include material-overrides();
+}
+
+body.dark {
+  --bg-dark: oklch(0.1 0 74);
+  --bg: oklch(0.2 0 74);
+  --bg-light: oklch(0.3 0 74);
+  --text: oklch(0.96 0 74);
+  --text-muted: oklch(0.76 0 74);
+  --primary: oklch(0.76 0.2 74);
+  --secondary: oklch(0.76 0.1 254);
+
+  @include material-overrides();
+
+  scrollbar-color: var(--bg-light) var(--bg-dark);
+  scrollbar-width: thin;
+}

@@ -5,7 +5,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-ui-navbar',
+  selector: 'app-component-navbar',
   imports: [MatIconModule, MatButtonModule, MatTooltipModule, RouterLink],
   template: `
     <div
@@ -25,7 +25,7 @@ import { RouterLink } from '@angular/router';
   `,
   styles: ``
 })
-export class UiNavbar {
+export class ComponentNavbar {
   navItems = [
     {
       icon: 'dashboard',

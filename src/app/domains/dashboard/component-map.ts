@@ -3,7 +3,7 @@ import * as L from 'leaflet';
 import { Location } from './data-location-model';
 
 @Component({
-  selector: 'app-feature-map',
+  selector: 'app-component-map',
   imports: [],
   template: `
     <div class="app-card-light h-100">
@@ -12,7 +12,7 @@ import { Location } from './data-location-model';
   `,
   styles: ``
 })
-export class FeatureMap implements AfterViewInit {
+export class ComponentMap implements AfterViewInit {
   @Input() location!: WritableSignal<Location | undefined>;
   private marker?: L.Marker;
   private map!: L.Map;

@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 import { ChartData } from './data-chart-data-model';
 
 @Component({
-  selector: 'app-ui-chart',
+  selector: 'app-component-chart',
   imports: [],
   template: ` <div class="app-card-light overflow-auto h-100">
     <h1 class="card-title">Graf</h1>
@@ -13,7 +13,7 @@ import { ChartData } from './data-chart-data-model';
   </div>`,
   styles: ``
 })
-export class UiChart implements OnInit {
+export class ComponentChart implements OnInit {
   @Input({ required: true }) data!: Signal<ChartData[]>;
   chart!: Chart;
 

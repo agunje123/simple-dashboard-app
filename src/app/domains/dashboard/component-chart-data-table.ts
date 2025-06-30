@@ -3,7 +3,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { ChartData } from './data-chart-data-model';
 
 @Component({
-  selector: 'app-ui-table',
+  selector: 'app-component-chart-data-table',
   standalone: true,
   template: `
     <div class="app-card-light overflow-auto h-100">
@@ -23,7 +23,7 @@ import { ChartData } from './data-chart-data-model';
   styles: [``],
   imports: [MatTableModule]
 })
-export class UiTableDataComponent {
+export class ComponentChartDataTable {
   @Input({ required: true }) data!: Signal<ChartData[]>;
   dataSource = new MatTableDataSource<ChartData>();
 

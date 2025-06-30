@@ -2,30 +2,30 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { UiNavbar } from './ui-navbar';
-import { UiHeader } from './ui-header';
 import { filter } from 'rxjs';
+import { ComponentNavbar } from './component-navbar';
+import { ComponentHeader } from './component-header';
 
 @Component({
-  selector: 'app-ui-layout',
-  imports: [RouterOutlet, MatIconModule, MatButtonModule, UiNavbar, UiHeader],
+  selector: 'app-page-core-layout',
+  imports: [RouterOutlet, MatIconModule, MatButtonModule, ComponentNavbar, ComponentHeader],
   template: `
     <div
       class="app-background h-screen w-screen grid grid-cols-1 grid-rows-[1fr_auto] 
             md:grid-rows-none md:grid-cols-[auto_1fr] p-2"
     >
       <div class="grid grid-rows-[auto_1fr] md:ml-2">
-        <app-ui-header class="mb-2" [title]="headerTitle()" />
+        <app-component-header class="mb-2" [title]="headerTitle()" />
         <div class="app-card overflow-auto">
           <router-outlet />
         </div>
       </div>
-      <app-ui-navbar class="mt-2 md:mt-0 row-start-3 md:col-start-1 md:row-start-1" />
+      <app-component-navbar class="mt-2 md:mt-0 row-start-3 md:col-start-1 md:row-start-1" />
     </div>
   `,
   styles: ``
 })
-export class UiLayout {
+export class PageCoreLayout {
   private router = inject(Router);
   private currentUrl = signal(this.router.url);
 

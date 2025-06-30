@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-ui-pokemon-table',
+  selector: 'app-component-pokemon-table',
   standalone: true,
   template: `
     <div class="app-card-light overflow-auto">
@@ -60,7 +60,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   imports: [MatTableModule, MatPaginatorModule, MatButtonModule, MatIconModule, MatTooltipModule],
   providers: [{ provide: MatPaginatorIntl, useClass: UtilPaginatorI18n }]
 })
-export class UiTablePokemonComponent {
+export class ComponentPokemonTable {
   @Input() set data(value: Pokemon[] | null) {
     this.dataSource = new MatTableDataSource<Pokemon>(value || []);
   }

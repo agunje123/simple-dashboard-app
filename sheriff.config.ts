@@ -6,8 +6,8 @@ export const sheriffConfig: SheriffConfig = {
   tagging: {
     'src/app': {
       'domains/<domain>': {
-        'feature-<feature>': ['domain:<domain>', 'type:feature'],
-        'ui-<ui>': ['domain:<domain>', 'type:ui'],
+        'page-<page>': ['domain:<domain>', 'type:page'],
+        'component-<component>': ['domain:<domain>', 'type:component'],
         data: ['domain:<domain>', 'type:data'],
         'util-<ui>': ['domain:<domain>', 'type:util']
       }
@@ -18,8 +18,8 @@ export const sheriffConfig: SheriffConfig = {
 
     'domain:*': [sameTag, 'domain:shared'],
 
-    'type:feature': ['type:ui', 'type:data', 'type:util'],
-    'type:ui': ['type:data', 'type:util'],
+    'type:page': ['type:component', 'type:data', 'type:util'],
+    'type:component': ['type:data', 'type:util'],
     'type:data': ['type:util'],
     'type:util': noDependencies
   }

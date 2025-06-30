@@ -4,7 +4,7 @@ import { Pokemon } from './data-pokemon-model';
 import { TitleCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-ui-pokemon-dialog',
+  selector: 'app-component-pokemon-dialog',
   template: `<div class="app-card-light">
     <span class="card-title">{{ data.name | titlecase }}</span>
     <img [src]="data.sprites.front_default" alt="{{ data.name }}" class="w-full h-full" />
@@ -20,8 +20,8 @@ import { TitleCasePipe } from '@angular/common';
   styles: [``],
   imports: [TitleCasePipe]
 })
-export class UiPokemonDialog {
-  dialogRef = inject(MatDialogRef<UiPokemonDialog>);
+export class ComponentPokemonDialog {
+  dialogRef = inject(MatDialogRef<ComponentPokemonDialog>);
   data = inject<Pokemon>(MAT_DIALOG_DATA);
 
   statNameMap: Record<string, string> = {

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { UiLayout } from './shared/ui-layout';
+import { PageCoreLayout } from './shared/page-core-layout';
 
 @Component({
   selector: 'app-root',
-  imports: [UiLayout],
-  template: `<app-ui-layout />`,
+  imports: [PageCoreLayout],
+  template: `<app-page-core-layout />`,
   styles: []
 })
 export class App {}

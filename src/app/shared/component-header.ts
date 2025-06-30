@@ -7,7 +7,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
-  selector: 'app-ui-header',
+  selector: 'app-component-header',
   imports: [MatMenuModule, MatIconModule, MatButtonModule, MatTooltipModule, MatSlideToggleModule],
   template: `
     <nav class="app-card h-16 flex justify-between">
@@ -43,7 +43,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   `,
   styles: ``
 })
-export class UiHeader implements OnInit {
+export class ComponentHeader implements OnInit {
   @Input() title?: string;
   isDark = false;
   isMobile = signal(false);

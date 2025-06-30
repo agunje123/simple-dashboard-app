@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Location } from './data-location-model';
 
 @Component({
-  selector: 'app-feature-location-list',
+  selector: 'app-component-location-list',
   imports: [],
   template: ` <div class="app-card-light h-100 overflow-auto">
     <h1 class="card-title">Lokacije</h1>
@@ -18,7 +18,7 @@ import { Location } from './data-location-model';
   </div>`,
   styles: ``
 })
-export class FeatureLocationList {
+export class ComponentLocationList {
   @Output() selectedLocation = new EventEmitter<Location>();
 
   locations: Location[] = [

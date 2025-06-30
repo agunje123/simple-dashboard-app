@@ -1,6 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import {
+  MatPaginator,
+  MatPaginatorIntl,
+  MatPaginatorModule,
+  PageEvent
+} from '@angular/material/paginator';
 import { Pokemon } from './data-pokemon-model';
 import { UtilPaginatorI18n } from '../../shared/util-paginator-i18n';
 import { MatButtonModule } from '@angular/material/button';
@@ -54,6 +59,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         [pageSizeOptions]="[5, 10]"
         (page)="onPage($event)"
       />
+      <div class="flex justify-end">
+        <button (click)="goToFirstPage()" class="btn-primary">Povratak na prvu stranicu</button>
+      </div>
     </div>
   `,
   styles: [``],
@@ -67,6 +75,8 @@ export class ComponentPokemonTable {
   @Output() pagination = new EventEmitter<PageEvent>();
   @Output() showPokemonDetails = new EventEmitter<Pokemon>();
   dataSource = new MatTableDataSource<Pokemon>();
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   headerMap: Record<string, string> = {
     id: 'ID',
@@ -90,5 +100,11 @@ export class ComponentPokemonTable {
 
   onShowDetails(pokemon: Pokemon) {
     this.showPokemonDetails.emit(pokemon);
+  }
+
+  goToFirstPage() {
+    if (this.paginator) {
+      this.paginator.firstPage();
+    }
   }
 }
